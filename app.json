@@ -1,0 +1,5 @@
+{
+  "splashScreenName": "screens.SplashScreen",
+  "loginScreenName": "screens.LoginScreen",
+  "dashboardScreenName": "screens.DashboardScreen"
+}

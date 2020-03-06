@@ -1,0 +1,65 @@
+{
+  "name": "SimpleLogin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd ios; pod install",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-navigation": "^6.1.0",
+    "react-native-sensitive-info": "^5.5.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/detox": "^14.5.2",
+    "@types/jest": "^24.9.1",
+    "@types/react-native": "^0.61.20",
+    "@types/react-test-renderer": "16.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "babel-jest": "^24.9.0",
+    "detox": "^15.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-functional": "^3.0.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.9.0",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/SimpleLogin.app",
+        "build": "xcodebuild -workspace ios/SimpleLogin.xcworkspace -scheme SimpleLogin -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11"
+        }
+      }
+    }
+  }
+}
